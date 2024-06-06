@@ -1,0 +1,15 @@
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\bin\Debug\net8.0\jogo_Multi-Thread.exe
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\bin\Debug\net8.0\jogo_Multi-Thread.deps.json
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\bin\Debug\net8.0\jogo_Multi-Thread.runtimeconfig.json
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\bin\Debug\net8.0\jogo_Multi-Thread.dll
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\bin\Debug\net8.0\jogo_Multi-Thread.pdb
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.AssemblyInfoInputs.cache
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.AssemblyInfo.cs
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.csproj.CoreCompileInputs.cache
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.sourcelink.json
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.dll
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\refint\jogo_Multi-Thread.dll
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.pdb
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\jogo_Multi-Thread.genruntimeconfig.cache
+c:\Users\pedro\OneDrive\Documentos\Trabalhinhos\SO\Jogo Multi-Thread\Code\jogo_Multi-Thread\obj\Debug\net8.0\ref\jogo_Multi-Thread.dll
