@@ -12,13 +12,13 @@ internal class Bola : IDirecionavel, IDeslocavel
 
     bool direcaoBola;
 
-    const int COL_INIC = 2;
+    const int COL_INIC = 5;
 
-    const int LIN_INIC = 3;
+    const int LIN_INIC = 2;
 
     public Bola()
     {
-        posicao = new int[2] { COL_INIC, LIN_INIC };
+        posicao = [LIN_INIC, COL_INIC];
         direcaoBola = decidirDirecao();
     }
 

@@ -22,9 +22,9 @@ internal class Jogo
     public Jogo()
     {
         mapa = new Mapa();
-        pontos = new int[2] { 0, 0 };
-        barra1 = new Barra(2, 1);
-        barra2 = new Barra(8, 1);
+        pontos = [0, 0];
+        barra1 = new Barra(1);
+        barra2 = new Barra(9);
         bola = new Bola();
 
         mapa.addItem(barra1.valPosicao(), "]");
@@ -37,8 +37,9 @@ internal class Jogo
 
     }
 
-    public string exibirMapa(){
-        return mapa.ToString();
+    public string exibirMapa()
+    {
+        return mapa.exibir();
     }
 
     public bool marcarPonto()

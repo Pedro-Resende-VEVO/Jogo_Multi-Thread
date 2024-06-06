@@ -14,8 +14,6 @@ internal class Program
 
         Console.WriteLine(jogo.exibirMapa());
 
-        Console.ReadKey();
-
         /*Thread.CurrentThread.Name = "Bola";
 
         Thread t1 = new Thread(new ThreadStart(run));

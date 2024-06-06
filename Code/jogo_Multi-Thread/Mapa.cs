@@ -8,16 +8,16 @@ namespace jogo_Multi_Thread;
 
 internal class Mapa
 {
-    private string[,] MAPA;
+    private string[,] campo;
 
     public Mapa()
     {
-        MAPA = new[,] {
-                {"-","-","-","-","-","-","-","-","-","-" },
-                { "|"," "," "," "," "," "," "," "," ","|" },
-                { "|"," "," "," "," "," "," "," "," ","|" },
-                { "|"," "," "," "," "," "," "," "," ","|" },
-                { "-","-","-","-","-","-","-","-","-","-"}
+        campo = new[,] {
+                {"|","-","-","-","-","-","-","-","-","-","|" },
+                { "#"," "," "," "," "," "," "," "," "," ","#" },
+                { "#"," "," "," "," "," "," "," "," "," ","#" },
+                { "#"," "," "," "," "," "," "," "," "," ","#" },
+                { "|","-","-","-","-","-","-","-","-","-","|"}
             };
     }
 
@@ -27,9 +27,9 @@ internal class Mapa
 
         for (int i = 0; i < 5; i++)
         {
-            for (int j = 0; j < 10; j++)
+            for (int j = 0; j < 11; j++)
             {
-                sb.Append(MAPA[i, j]);
+                sb.Append(campo[i, j]);
             }
             sb.AppendLine();
         }
@@ -37,26 +37,19 @@ internal class Mapa
         return sb.ToString();
     }
 
-    public bool addItem(int[] posicao, string valor)
+    public void addItem(int[] posicao, string valor)
     {
-        if (MAPA[posicao[0], posicao[1]] == " ")
-        {
-            MAPA[posicao[0], posicao[1]] = valor;
-            return true;
-        }
-
-        return false;
+        campo[posicao[0], posicao[1]] = valor;
     }
 
-    public bool removerItem(int[] posicao, string valor)
+    public void removerItem(int[] posicao)
     {
-        if (MAPA[posicao[0], posicao[1]] == valor)
-        {
-            MAPA[posicao[0], posicao[1]] = " ";
-            return true;
-        }
+        campo[posicao[0], posicao[1]] = " ";
+    }
 
-        return false;
+    public string localizarItem(int[] posicao)
+    {
+        return campo[posicao[0], posicao[1]];
     }
 }
 

@@ -10,9 +10,9 @@ internal class Barra : IDeslocavel
 {
     private int[] posicao;
 
-    public Barra(int colInic, int linInic)
+    public Barra(int colInic)
     {
-        posicao = new int[2] { colInic, linInic };
+        posicao = [ 2, colInic ];
     }
 
     public int[] valPosicao()
