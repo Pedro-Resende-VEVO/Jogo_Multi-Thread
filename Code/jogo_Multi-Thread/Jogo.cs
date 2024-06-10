@@ -12,24 +12,15 @@ internal class Jogo
 
     private Mapa mapa;
 
-    private Barra barra1;
-
-    private Barra barra2;
-
-    private Bola bola;
-
-
     public Jogo()
     {
         mapa = new Mapa();
         pontos = [0, 0];
-        barra1 = new Barra(1);
-        barra2 = new Barra(9);
-        bola = new Bola();
+    }
 
-        mapa.addItem(barra1.valPosicao(), "]");
-        mapa.addItem(barra2.valPosicao(), "[");
-        mapa.addItem(bola.valPosicao(), "0");
+    public void subirBarra()
+    {
+        //        mapa.subirBarra();
     }
 
     public void iniciarJogo()

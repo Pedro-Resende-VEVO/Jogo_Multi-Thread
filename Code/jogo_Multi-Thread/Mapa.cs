@@ -10,6 +10,12 @@ internal class Mapa
 {
     private string[,] campo;
 
+    private Barra jogBar;
+
+    private Barra advBar;
+
+    private Bola bola;
+
     public Mapa()
     {
         campo = new[,] {
@@ -19,6 +25,14 @@ internal class Mapa
                 { "#"," "," "," "," "," "," "," "," "," ","#" },
                 { "|","-","-","-","-","-","-","-","-","-","|"}
             };
+
+        jogBar = new Barra(1);
+        advBar = new Barra(9);
+        bola = new Bola();
+
+        addItem(jogBar.valPosicao(), "]");
+        addItem(advBar.valPosicao(), "[");
+        addItem(bola.valPosicao(), "0");
     }
 
     public string exibir()

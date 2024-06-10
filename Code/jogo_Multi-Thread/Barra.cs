@@ -20,6 +20,11 @@ internal class Barra : IDeslocavel
         return posicao;
     }
 
+    public int valLinha()
+    {
+        return posicao[0];
+    }
+
     public void mover()
     {
     }
