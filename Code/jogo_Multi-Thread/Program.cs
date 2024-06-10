@@ -15,6 +15,10 @@ internal class Program
         t1.Name = "Inputs - ";
         Thread t2 = new Thread(new ThreadStart(mapa));
         t2.Name = "Mapa - ";
+        Thread t3 = new Thread(new ThreadStart(adversario));
+        t3.Name = "Adversário - ";
+        Thread t4 = new Thread(new ThreadStart(bola));
+        t4.Name = "Bola - ";
 
         Console.WriteLine("=================Sesa's Pong=================\n");
         Console.WriteLine(" | Esta barra é você, a outra é sua inimiga!");
@@ -32,17 +36,20 @@ internal class Program
 
         t1.Start();
         t2.Start();
+        t3.Start();
+        t4.Start();
     }
 
     static void inputs()
     {
+        string s;
         while (true)
         {
-            string s = Console.ReadLine()!;
+            s = Console.ReadLine()!;
             if (s == "W" || s == "w")
-                jogo.subirJog();
+                jogo.subirItem(1);
             else if (s == "S" || s == "s")
-                jogo.descerJog();
+                jogo.descerItem(1);
             s = "";
             Thread.Sleep(500);
         }
@@ -55,6 +62,38 @@ internal class Program
             Console.WriteLine(jogo.exibirMapa());
             Thread.Sleep(1000);
             //Console.Clear();
+        }
+    }
+
+    static void adversario()
+    {
+        Random rand = new Random();
+        while (true)
+        {
+            int valorAleatorio = rand.Next(0, 3);
+            if (valorAleatorio == 2)
+                jogo.subirItem(2);
+            else if (valorAleatorio == 0)
+                jogo.descerItem(2);
+            //Se der 1 ele não faz nada
+            Thread.Sleep(1000);
+        }
+    }
+
+    static void bola()
+    {
+        Random rand = new Random();
+        while (true)
+        {
+            int valorAleatorio = rand.Next(0, 3);
+            if (valorAleatorio == 2)
+                jogo.subirItem(3);
+            else if (valorAleatorio == 0)
+                jogo.descerItem(3);
+            //Se der 1 ele não faz nada
+
+            jogo.moverBola();
+            Thread.Sleep(1000);
         }
     }
 }

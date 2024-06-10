@@ -51,11 +51,6 @@ internal class Mapa
         campo[posicao[0], posicao[1]] = " ";
     }
 
-    public string localizarItem(int linha, int coluna)
-    {
-        return campo[linha, coluna];
-    }
-
     public void subirItem(Item item, string valor)
     {
         int[] posicAtual = item.posicaoAtual();
@@ -75,6 +70,37 @@ internal class Mapa
             removerItem(item.posicaoAtual());
             item.descer();
             addItem(item.posicaoAtual(), valor);
+        }
+    }
+
+    public void moverBola(Bola bola)
+    {
+        int[] posicAtual = bola.posicaoAtual();
+        if (bola.direcaoAtual()) //Direita
+        {    
+            if (campo[posicAtual[0], posicAtual[1] + 1] == " ")
+            {
+                removerItem(bola.posicaoAtual());
+                bola.frente();
+                addItem(bola.posicaoAtual(), "0");
+            }
+            else{
+                bola.mudarDirecao();
+                moverBola(bola);
+            }
+        }
+        else if (bola.direcaoAtual() == false) //Esquerda
+        {
+            if (campo[posicAtual[0], posicAtual[1] - 1] == " ")
+            {
+                removerItem(bola.posicaoAtual());
+                bola.tras();
+                addItem(bola.posicaoAtual(), "0");
+            }
+            else{
+                bola.mudarDirecao();
+                moverBola(bola);
+            }
         }
     }
 }

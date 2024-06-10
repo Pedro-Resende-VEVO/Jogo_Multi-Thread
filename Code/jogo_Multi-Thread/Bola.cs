@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace jogo_Multi_Thread;
 internal class Bola : Item, IHorizontavel
 {
-    bool direcaoBola;
+    bool direcao;
 
     const int COL_INIC = 5;
 
@@ -17,54 +17,37 @@ internal class Bola : Item, IHorizontavel
     public Bola()
     {
         posicao = [LIN_INIC, COL_INIC];
-        direcaoBola = decidirDirecao();
+        direcao = decidirDirecao();
     }
 
     public void mudarDirecao()
     {
-        if (direcaoBola)
-            direcaoBola = false;
+        if (direcao)
+            direcao = false; //Esquerda
         else
-            direcaoBola = true;
+            direcao = true; //Direita
     }
 
-    public bool decidirDirecao()
+    public bool direcaoAtual()
+    {
+        return direcao;
+    }
+
+    private bool decidirDirecao()
     {
         Random rand = new Random();
         return (rand.Next(2) % 2 == 0) ? true : false;
     }
 
-    public void mover()
+    public void frente()
     {
-        //Thread 
-
-        while (direcaoBola)
-        {
-            posicao[0]++; //Muda a linha
-        }
+        posicao[1]++;
     }
 
-    public void deslocar()
+    public void tras()
     {
-        posicao[1] = valorLinha(); //Muda a coluna
+        posicao[1]--;
     }
 
-    private int valorLinha()
-    {
-        if (posicao[0] == 1)
-        {
-            //Ir para 2 ou 3
-        }
-        else if (posicao[0] == 2)
-        {
-            //Ir para 1 ou 3
-        }
-        else if (posicao[0] == 3)
-        {
-            //Ir para 2 ou 1
-        }
-
-        return 0;
-    }
 }
 

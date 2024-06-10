@@ -32,19 +32,29 @@ internal class Jogo
         mapa.addItem(bola.posicaoAtual(), "0");
     }
 
-    public void subirJog()
+    public void subirItem(int tipo)
     {
-        mapa.subirItem(jogBar, "]");
+        if (tipo == 1)
+            mapa.subirItem(jogBar, "]");
+        else if (tipo == 2)
+            mapa.subirItem(advBar, "[");
+        else if (tipo == 3)
+            mapa.subirItem(bola, "0");
     }
 
-    public void descerJog()
+    public void descerItem(int tipo)
     {
-        mapa.descerItem(jogBar, "]");
+        if (tipo == 1)
+            mapa.descerItem(jogBar, "]");
+        else if (tipo == 2)
+            mapa.descerItem(advBar, "[");
+        else if (tipo == 3)
+            mapa.descerItem(bola, "0");
     }
 
-    public void iniciarJogo()
+    public void moverBola()
     {
-
+        mapa.moverBola(bola);
     }
 
     public string exibirMapa()

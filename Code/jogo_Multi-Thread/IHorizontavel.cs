@@ -8,6 +8,6 @@ namespace jogo_Multi_Thread;
 
 interface IHorizontavel
 {
-    // public void frente();
-    // public void tras();
+    public void frente();
+    public void tras();
 }
