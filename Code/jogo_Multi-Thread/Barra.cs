@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace jogo_Multi_Thread;
 
-internal class Barra : IDeslocavel
+internal class Barra : IVerticavel
 {
     private int[] posicao;
 
@@ -15,14 +15,33 @@ internal class Barra : IDeslocavel
         posicao = [ 2, colInic ];
     }
 
-    public int[] valPosicao()
+    public int[] posicaoAtual()
     {
         return posicao;
     }
 
-    public int valLinha()
+    public int[] linhaAcima()
     {
-        return posicao[0];
+        int[] posicTemp = posicao;
+        posicTemp[0]++;
+        return posicTemp;
+    }
+
+     public int[] linhaAbaixo()
+    {
+        int[] posicTemp = posicao;
+        posicTemp[0]--;
+        return posicTemp;
+    }
+
+    public void subir()
+    {
+        posicao[0]++;
+    }
+
+    public void descer()
+    {
+        posicao[0]++;
     }
 
     public void mover()

@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace jogo_Multi_Thread;
-internal class Bola : IDirecionavel, IDeslocavel
+internal class Bola : IHorizontavel, IVerticavel
 {
     private int[] posicao;
 
@@ -47,13 +47,21 @@ internal class Bola : IDirecionavel, IDeslocavel
 
         while (direcaoBola)
         {
-            posicao[1]++; //Muda a linha
+            posicao[0]++; //Muda a linha
         }
+    }
+
+    public void subir(){
+
+    }
+
+    public void descer(){
+        
     }
 
     public void deslocar()
     {
-        posicao[0] = valorLinha(); //Muda a coluna
+        posicao[1] = valorLinha(); //Muda a coluna
     }
 
     private int valorLinha()

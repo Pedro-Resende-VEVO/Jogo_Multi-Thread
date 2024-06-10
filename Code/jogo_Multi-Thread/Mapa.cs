@@ -30,8 +30,8 @@ internal class Mapa
         advBar = new Barra(9);
         bola = new Bola();
 
-        addItem(jogBar.valPosicao(), "]");
-        addItem(advBar.valPosicao(), "[");
+        addItem(jogBar.posicaoAtual(), "]");
+        addItem(advBar.posicaoAtual(), "[");
         addItem(bola.valPosicao(), "0");
     }
 
@@ -64,6 +64,12 @@ internal class Mapa
     public string localizarItem(int[] posicao)
     {
         return campo[posicao[0], posicao[1]];
+    }
+
+    public void subirBarra(){
+        if(localizarItem(jogBar.linhaAcima()) != ""){
+            addItem(jogBar.linhaAcima(), "]");
+        }
     }
 }
 

@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace jogo_Multi_Thread;
-interface IDeslocavel
+
+internal class IHorizontavel
 {
-    int[] valPosicao();
-
-    void mover();
-
-    void deslocar();
+    // public void frente();
+    // public void tras();
 }

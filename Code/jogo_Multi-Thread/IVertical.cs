@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace jogo_Multi_Thread;
-
-internal class IDirecionavel
+interface IVerticavel
 {
+    public void subir();
+
+    public void descer();
 }
