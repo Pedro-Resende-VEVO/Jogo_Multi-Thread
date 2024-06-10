@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace jogo_Multi_Thread;
 
-internal class IHorizontavel
+interface IHorizontavel
 {
     // public void frente();
     // public void tras();

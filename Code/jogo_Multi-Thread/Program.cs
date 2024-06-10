@@ -40,7 +40,7 @@ internal class Program
         {
             string s = Console.ReadLine()!;
             if(s == "W"){
-                jogo.subirBarra();
+                jogo.subirJog();
             }
             Console.WriteLine(Thread.CurrentThread.Name + s);
 

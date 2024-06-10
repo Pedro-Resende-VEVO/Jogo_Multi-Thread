@@ -10,11 +10,7 @@ internal class Mapa
 {
     private string[,] campo;
 
-    private Barra jogBar;
-
-    private Barra advBar;
-
-    private Bola bola;
+    
 
     public Mapa()
     {
@@ -26,13 +22,7 @@ internal class Mapa
                 { "|","-","-","-","-","-","-","-","-","-","|"}
             };
 
-        jogBar = new Barra(1);
-        advBar = new Barra(9);
-        bola = new Bola();
-
-        addItem(jogBar.posicaoAtual(), "]");
-        addItem(advBar.posicaoAtual(), "[");
-        addItem(bola.valPosicao(), "0");
+        
     }
 
     public string exibir()
@@ -66,9 +56,11 @@ internal class Mapa
         return campo[posicao[0], posicao[1]];
     }
 
-    public void subirBarra(){
-        if(localizarItem(jogBar.linhaAcima()) != ""){
-            addItem(jogBar.linhaAcima(), "]");
+    public void subirItem(Item item){
+        if(localizarItem(item.linhaAcima()) == " "){
+            addItem(item.linhaAcima(), "]");
+            removerItem(item.posicaoAtual());
+            item.subir();
         }
     }
 }

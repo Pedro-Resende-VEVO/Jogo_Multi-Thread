@@ -6,10 +6,8 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace jogo_Multi_Thread;
-internal class Bola : IHorizontavel, IVerticavel
+internal class Bola : Item, IHorizontavel
 {
-    private int[] posicao;
-
     bool direcaoBola;
 
     const int COL_INIC = 5;
@@ -36,11 +34,6 @@ internal class Bola : IHorizontavel, IVerticavel
         return (rand.Next(2) % 2 == 0) ? true : false;
     }
 
-    public int[] valPosicao()
-    {
-        return posicao;
-    }
-
     public void mover()
     {
         //Thread 
@@ -49,14 +42,6 @@ internal class Bola : IHorizontavel, IVerticavel
         {
             posicao[0]++; //Muda a linha
         }
-    }
-
-    public void subir(){
-
-    }
-
-    public void descer(){
-        
     }
 
     public void deslocar()
