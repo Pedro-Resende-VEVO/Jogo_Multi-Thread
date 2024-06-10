@@ -10,7 +10,7 @@ internal class Mapa
 {
     private string[,] campo;
 
-    
+
 
     public Mapa()
     {
@@ -22,7 +22,7 @@ internal class Mapa
                 { "|","-","-","-","-","-","-","-","-","-","|"}
             };
 
-        
+
     }
 
     public string exibir()
@@ -51,16 +51,30 @@ internal class Mapa
         campo[posicao[0], posicao[1]] = " ";
     }
 
-    public string localizarItem(int[] posicao)
+    public string localizarItem(int linha, int coluna)
     {
-        return campo[posicao[0], posicao[1]];
+        return campo[linha, coluna];
     }
 
-    public void subirItem(Item item){
-        if(localizarItem(item.linhaAcima()) == " "){
-            addItem(item.linhaAcima(), "]");
+    public void subirItem(Item item, string valor)
+    {
+        int[] posicAtual = item.posicaoAtual();
+        if (campo[posicAtual[0] - 1, posicAtual[1]] == " ")
+        {
             removerItem(item.posicaoAtual());
             item.subir();
+            addItem(item.posicaoAtual(), valor);
+        }
+    }
+
+    public void descerItem(Item item, string valor)
+    {
+        int[] posicAtual = item.posicaoAtual();
+        if (campo[posicAtual[0] + 1, posicAtual[1]] == " ")
+        {
+            removerItem(item.posicaoAtual());
+            item.descer();
+            addItem(item.posicaoAtual(), valor);
         }
     }
 }

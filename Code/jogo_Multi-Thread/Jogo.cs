@@ -34,7 +34,12 @@ internal class Jogo
 
     public void subirJog()
     {
-        mapa.subirItem(jogBar);
+        mapa.subirItem(jogBar, "]");
+    }
+
+    public void descerJog()
+    {
+        mapa.descerItem(jogBar, "]");
     }
 
     public void iniciarJogo()

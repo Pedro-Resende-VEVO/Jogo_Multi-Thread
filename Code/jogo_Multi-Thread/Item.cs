@@ -20,23 +20,9 @@ abstract class Item
         return posicao;
     }
 
-    public int[] linhaAcima()
-    {
-        int[] posicTemp = posicao;
-        posicTemp[0]++;
-        return posicTemp;
-    }
-
-    public int[] linhaAbaixo()
-    {
-        int[] posicTemp = posicao;
-        posicTemp[0]--;
-        return posicTemp;
-    }
-
     public void subir()
     {
-        posicao[0]++;
+        posicao[0]--;
     }
 
     public void descer()

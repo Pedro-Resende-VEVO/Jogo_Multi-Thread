@@ -39,12 +39,12 @@ internal class Program
         while (true)
         {
             string s = Console.ReadLine()!;
-            if(s == "W"){
+            if (s == "W" || s == "w")
                 jogo.subirJog();
-            }
-            Console.WriteLine(Thread.CurrentThread.Name + s);
-
-            Thread.Sleep(1000);
+            else if (s == "S" || s == "s")
+                jogo.descerJog();
+            s = "";
+            Thread.Sleep(500);
         }
     }
 
@@ -54,6 +54,7 @@ internal class Program
         {
             Console.WriteLine(jogo.exibirMapa());
             Thread.Sleep(1000);
+            //Console.Clear();
         }
     }
 }
