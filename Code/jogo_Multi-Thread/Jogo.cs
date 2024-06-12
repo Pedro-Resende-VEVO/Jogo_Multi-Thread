@@ -8,7 +8,11 @@ namespace jogo_Multi_Thread;
 
 internal class Jogo
 {
-    private int[] pontos;
+    private int PONTOS_PARA_VENCER = 3;
+
+    private int pontoJog;
+
+    private int pontoIA;
 
     private Mapa mapa;
 
@@ -21,7 +25,8 @@ internal class Jogo
     public Jogo()
     {
         mapa = new Mapa();
-        pontos = [0, 0];
+        pontoJog = 0;
+        pontoIA = 0;
 
         jogBar = new Barra(1);
         advBar = new Barra(9);
@@ -30,6 +35,23 @@ internal class Jogo
         mapa.addItem(jogBar.posicaoAtual(), "]");
         mapa.addItem(advBar.posicaoAtual(), "[");
         mapa.addItem(bola.posicaoAtual(), "0");
+    }
+
+    public bool existeVencedor()
+    {
+        return (pontoJog == PONTOS_PARA_VENCER || pontoIA == PONTOS_PARA_VENCER) ? true : false;
+    }
+
+    public string definirVencedor()
+    {
+        if (pontoJog == PONTOS_PARA_VENCER)
+            return "Você";
+        return "a Máquina";
+    }
+
+    public string placarAtual()
+    {
+        return "Você: " + pontoJog + " -  IA: " + pontoIA;
     }
 
     public void subirItem(int tipo)
@@ -67,9 +89,12 @@ internal class Jogo
         return true;
     }
 
-    private void addPonto(int jogador)
-    {
+    public void validarPonto(){
+        if(mapa.validarGol(bola) == 1){
+            pontoJog++;
+        }
+        else if(mapa.validarGol(bola) == 2)
+            pontoIA++;
     }
-
 }
 

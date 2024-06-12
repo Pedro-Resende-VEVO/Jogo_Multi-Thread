@@ -77,14 +77,15 @@ internal class Mapa
     {
         int[] posicAtual = bola.posicaoAtual();
         if (bola.direcaoAtual()) //Direita
-        {    
+        {
             if (campo[posicAtual[0], posicAtual[1] + 1] == " ")
             {
                 removerItem(bola.posicaoAtual());
                 bola.frente();
                 addItem(bola.posicaoAtual(), "0");
             }
-            else{
+            else
+            {
                 bola.mudarDirecao();
                 moverBola(bola);
             }
@@ -97,11 +98,32 @@ internal class Mapa
                 bola.tras();
                 addItem(bola.posicaoAtual(), "0");
             }
-            else{
+            else
+            {
                 bola.mudarDirecao();
                 moverBola(bola);
             }
         }
+    }
+
+    public int validarGol(Bola bola)
+    {
+        int[] posicAtual = bola.posicaoAtual();
+        if (bola.direcaoAtual()) //Direita
+        {
+            if (campo[posicAtual[0], posicAtual[1] + 1] == "#")
+            {
+                return 1; //Gol do jog
+            }
+        }
+        else if (bola.direcaoAtual() == false) //Esquerda
+        {
+            if (campo[posicAtual[0], posicAtual[1] - 1] == "#")
+            {
+                return 2; //Gol da IA
+            }
+        }
+        return 0;
     }
 }
 

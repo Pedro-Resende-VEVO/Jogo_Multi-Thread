@@ -11,6 +11,10 @@ internal class Program
     private static Jogo jogo = new Jogo();
     static void Main(string[] args)
     {
+        Thread.CurrentThread.Name = "==Placar==\n" + jogo.placarAtual();
+
+        bool cond = false;
+
         Thread t1 = new Thread(new ThreadStart(inputs));
         t1.Name = "Inputs - ";
         Thread t2 = new Thread(new ThreadStart(mapa));
@@ -19,6 +23,8 @@ internal class Program
         t3.Name = "Adversário - ";
         Thread t4 = new Thread(new ThreadStart(bola));
         t4.Name = "Bola - ";
+        Thread t5 = new Thread(new ThreadStart(pontuar));
+        t5.Name = "Pontuar - ";
 
         Console.WriteLine("=================Sesa's Pong=================\n");
         Console.WriteLine(" | Esta barra é você, a outra é sua inimiga!");
@@ -38,6 +44,25 @@ internal class Program
         t2.Start();
         t3.Start();
         t4.Start();
+
+        while (cond == false)
+        {
+            if (jogo.existeVencedor())
+            {
+                t1.Join(0);
+                t2.Join(0);
+                t3.Join(0);
+                t4.Join(0);
+                cond = true;
+            }
+            Console.WriteLine(Thread.CurrentThread.Name);
+            Thread.Sleep(1000);
+        }
+
+        Console.WriteLine(Thread.CurrentThread.Name);
+        Console.WriteLine("O jogo terminou! e o vencedor é: " + jogo.definirVencedor());
+        Console.WriteLine("\nObrigado por jogar!");
+        Console.ReadLine();
     }
 
     static void inputs()
@@ -94,6 +119,13 @@ internal class Program
 
             jogo.moverBola();
             Thread.Sleep(1000);
+        }
+    }
+
+    static void pontuar()
+    {
+        while(true){
+            jogo.validarPonto();
         }
     }
 }
