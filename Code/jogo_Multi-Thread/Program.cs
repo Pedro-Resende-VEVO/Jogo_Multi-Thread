@@ -11,7 +11,7 @@ internal class Program
     private static Jogo jogo = new Jogo();
     static void Main(string[] args)
     {
-        Thread.CurrentThread.Name = "==Placar==\n" + jogo.placarAtual();
+        Thread.CurrentThread.Name = "====Placar====\n";
 
         bool cond = false;
 
@@ -44,23 +44,25 @@ internal class Program
         t2.Start();
         t3.Start();
         t4.Start();
+        t5.Start();
 
         while (cond == false)
         {
             if (jogo.existeVencedor())
             {
-                t1.Join(0);
-                t2.Join(0);
-                t3.Join(0);
-                t4.Join(0);
+                t1.Join();
+                t2.Join();
+                t3.Join();
+                t4.Join();
+                t5.Join();
                 cond = true;
             }
-            Console.WriteLine(Thread.CurrentThread.Name);
+            Console.WriteLine(Thread.CurrentThread.Name + jogo.placarAtual());
             Thread.Sleep(1000);
         }
 
-        Console.WriteLine(Thread.CurrentThread.Name);
-        Console.WriteLine("O jogo terminou! e o vencedor é: " + jogo.definirVencedor());
+        Console.WriteLine(Thread.CurrentThread.Name + jogo.placarAtual());
+        Console.WriteLine("O jogo terminou! o vencedor é: " + jogo.definirVencedor());
         Console.WriteLine("\nObrigado por jogar!");
         Console.ReadLine();
     }
@@ -124,8 +126,10 @@ internal class Program
 
     static void pontuar()
     {
-        while(true){
+        while (true)
+        {
             jogo.validarPonto();
+            Thread.Sleep(1000);
         }
     }
 }

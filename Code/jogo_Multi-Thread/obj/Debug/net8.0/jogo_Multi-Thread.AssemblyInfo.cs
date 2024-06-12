@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("jogo_Multi-Thread")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16fcc6fb9319f96c7ff638e8a1e805f776ec180a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11712454ac05f2d73c7f1fece5f8649ca3c68bf2")]
 [assembly: System.Reflection.AssemblyProductAttribute("jogo_Multi-Thread")]
 [assembly: System.Reflection.AssemblyTitleAttribute("jogo_Multi-Thread")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

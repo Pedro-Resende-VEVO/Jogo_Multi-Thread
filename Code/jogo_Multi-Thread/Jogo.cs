@@ -89,11 +89,14 @@ internal class Jogo
         return true;
     }
 
-    public void validarPonto(){
-        if(mapa.validarGol(bola) == 1){
+    public void validarPonto()
+    {
+        int resp = mapa.validarGol(bola);
+        if (resp == 1)
+        {
             pontoJog++;
         }
-        else if(mapa.validarGol(bola) == 2)
+        else if (resp == 2)
             pontoIA++;
     }
 }
