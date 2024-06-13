@@ -8,12 +8,16 @@ namespace jogo_Multi_Thread;
 
 internal class Program
 {
+    public static bool cond;
+
+    public Program(){
+        cond = false;
+    }
+
     private static Jogo jogo = new Jogo();
     static void Main(string[] args)
     {
         Thread.CurrentThread.Name = "====Placar====\n";
-
-        bool cond = false;
 
         Thread t1 = new Thread(new ThreadStart(inputs));
         t1.Name = "Inputs - ";
@@ -40,6 +44,7 @@ internal class Program
         Console.WriteLine("\n(Aperte qualquer tecla para iniciar o jogo)");
         Console.ReadLine();
 
+        Console.WriteLine(Thread.CurrentThread.Name + jogo.placarAtual());
         t1.Start();
         t2.Start();
         t3.Start();
@@ -70,7 +75,7 @@ internal class Program
     static void inputs()
     {
         string s;
-        while (true)
+        while (cond != true)
         {
             s = Console.ReadLine()!;
             if (s == "W" || s == "w")
@@ -84,7 +89,7 @@ internal class Program
 
     static void mapa()
     {
-        while (true)
+        while (cond != true)
         {
             Console.WriteLine(jogo.exibirMapa());
             Thread.Sleep(1000);
@@ -95,7 +100,7 @@ internal class Program
     static void adversario()
     {
         Random rand = new Random();
-        while (true)
+        while (cond != true)
         {
             int valorAleatorio = rand.Next(0, 3);
             if (valorAleatorio == 2)
@@ -110,7 +115,7 @@ internal class Program
     static void bola()
     {
         Random rand = new Random();
-        while (true)
+        while (cond != true)
         {
             int valorAleatorio = rand.Next(0, 3);
             if (valorAleatorio == 2)
@@ -126,7 +131,7 @@ internal class Program
 
     static void pontuar()
     {
-        while (true)
+        while (cond != true)
         {
             jogo.validarPonto();
             Thread.Sleep(1000);
