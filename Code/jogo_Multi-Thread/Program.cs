@@ -51,15 +51,10 @@ internal class Program
         t4.Start();
         t5.Start();
 
-        while (cond == false)
+        while (cond != true)
         {
             if (jogo.existeVencedor())
             {
-                t1.Join();
-                t2.Join();
-                t3.Join();
-                t4.Join();
-                t5.Join();
                 cond = true;
             }
             Console.WriteLine(Thread.CurrentThread.Name + jogo.placarAtual());
