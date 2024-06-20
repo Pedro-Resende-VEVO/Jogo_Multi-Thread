@@ -19,16 +19,11 @@ internal class Program
     {
         Thread.CurrentThread.Name = "====Placar====\n";
 
-        Thread t1 = new Thread(new ThreadStart(inputs));
-        t1.Name = "Inputs - ";
-        Thread t2 = new Thread(new ThreadStart(mapa));
-        t2.Name = "Mapa - ";
-        Thread t3 = new Thread(new ThreadStart(adversario));
-        t3.Name = "Adversário - ";
-        Thread t4 = new Thread(new ThreadStart(bola));
-        t4.Name = "Bola - ";
-        Thread t5 = new Thread(new ThreadStart(pontuar));
-        t5.Name = "Pontuar - ";
+        Thread tInputs = new Thread(new ThreadStart(inputs));
+        Thread tMapa = new Thread(new ThreadStart(mapa));
+        Thread tAdversario = new Thread(new ThreadStart(adversario));
+        Thread tBola = new Thread(new ThreadStart(bola));
+        Thread tPontuar = new Thread(new ThreadStart(pontuar));
 
         Console.WriteLine("=================Sesa's Pong=================\n");
         Console.WriteLine(" | Esta barra é você, a outra é sua inimiga!");
@@ -38,18 +33,19 @@ internal class Program
         Console.WriteLine("**Instrunções:**");
         Console.WriteLine("1 - Seu objetivo e fazer a bola (\"0\") passar pela rede (\"#\") adversária;");
         Console.WriteLine("2 - Caso a bola passe pela rede, será marcado um ponto! Após 3 pontos teremos um vencedor;");
-        Console.WriteLine("3 - Com que sua barra (\"]\"), esteja na frente da bola quando ela vier;");
+        Console.WriteLine("3 - Faça com que sua barra (\"]\") esteja na frente da bola quando ela vier;");
         Console.WriteLine("4 - Use \"W\" para subir e \"S\" para descer sua barra;");
         Console.WriteLine("5 - Tudo além de \"W\" e \"S\" será desconsiderado.");
         Console.WriteLine("\n(Aperte qualquer tecla para iniciar o jogo)");
-        Console.ReadLine();
+        Console.ReadKey();
+        Console.Clear();
 
         Console.WriteLine(Thread.CurrentThread.Name + jogo.placarAtual());
-        t1.Start();
-        t2.Start();
-        t3.Start();
-        t4.Start();
-        t5.Start();
+        tInputs.Start();
+        tMapa.Start();
+        tAdversario.Start();
+        tBola.Start();
+        tPontuar.Start();
 
         while (cond != true)
         {
@@ -61,10 +57,8 @@ internal class Program
             Thread.Sleep(1000);
         }
 
-        Console.WriteLine(Thread.CurrentThread.Name + jogo.placarAtual());
         Console.WriteLine("O jogo terminou! o vencedor é: " + jogo.definirVencedor());
         Console.WriteLine("\nObrigado por jogar!");
-        Console.ReadLine();
     }
 
     static void inputs()
@@ -77,7 +71,6 @@ internal class Program
                 jogo.subirItem(1);
             else if (s == "S" || s == "s")
                 jogo.descerItem(1);
-            s = "";
             Thread.Sleep(500);
         }
     }
@@ -86,9 +79,9 @@ internal class Program
     {
         while (cond != true)
         {
+            Console.Clear();
             Console.WriteLine(jogo.exibirMapa());
             Thread.Sleep(1000);
-            //Console.Clear();
         }
     }
 
@@ -129,7 +122,7 @@ internal class Program
         while (cond != true)
         {
             jogo.validarPonto();
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
         }
     }
 }
