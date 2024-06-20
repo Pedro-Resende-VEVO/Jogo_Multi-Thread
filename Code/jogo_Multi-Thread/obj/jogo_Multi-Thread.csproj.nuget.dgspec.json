@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj": {}
+    "c:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj": {
+    "c:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj",
+        "projectUniqueName": "c:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj",
         "projectName": "jogo_Multi-Thread",
-        "projectPath": "C:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj",
+        "projectPath": "c:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\jogo_Multi-Thread.csproj",
         "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\obj\\",
+        "outputPath": "c:\\Users\\pedro\\OneDrive\\Documentos\\Trabalhinhos\\SO\\Jogo Multi-Thread\\Code\\jogo_Multi-Thread\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",

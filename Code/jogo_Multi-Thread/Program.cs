@@ -8,13 +8,9 @@ namespace jogo_Multi_Thread;
 
 internal class Program
 {
-    public static bool cond;
-
-    public Program(){
-        cond = false;
-    }
-
+    public static bool cond = false;
     private static Jogo jogo = new Jogo();
+
     static void Main(string[] args)
     {
         Thread.CurrentThread.Name = "====Placar====\n";
